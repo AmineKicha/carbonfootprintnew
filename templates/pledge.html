@@ -75,6 +75,15 @@
 		});
 	</script>
 	<div class="row container" id="resultgrapgh" style='margin:auto;'>
+		<div style="border: 5px solid whitesmoke;margin: 0 200px;">
+			<div style="padding:25px;">
+			<p>Your personal carbon footprint is <span class="writtendatapledge">{{result[17]}}</span> tonnes of carbon dioxide equivalent per year.</p>
+			<div class="row">
+				<i class="fa fa-home fa-5x col-sm-2" style="color:green" aria-hidden="true"></i>
+				<p class="col-sm-10">This is equal to <br> Carbon captured & stored by <span class="writtendatapledge">{{result[17] * 260.6}}</span> trees per year.</p>
+			</div></div>
+		</div>
+		<br>
 		<div class="col-sm-6">
 			<div id="gauge1"></div>
 				<p class="text-center"> <span class="writtendatapledge">{{writtendata[0]}}</span> tonnes. of your carbon footprint comes from home energy use, <span class="writtendatapledge">{{writtendata[1]}}</span> tonnes. comes from transportation & <span class="writtendatapledge">{{writtendata[2]}}</span> tonnes. comes from waste.</p>
