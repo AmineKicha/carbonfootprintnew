@@ -172,12 +172,6 @@ def background_process_new():
 
 
     res = (cdelectricity + cdlpg + cdcng + cdpng + cdsmallcar + cdmediumcar + cdlargecar + cdbike + cdtaxi + cdtrain + cdauto + cdbus + cddomflight + cdintflight + cdwaste)*0.001
-
-    #household = (cdelectricity + cdlpg + cdcng + cdpng)*0.001
-    #personalvechile = (cdsmallcar + cdmediumcar + cdlargecar + cdbike)*0.001
-    #public = (cdtaxi + cdtrain + cdauto + cdbus)*0.001
-    #flight = (cddomflight + cdintflight)*0.001
-    #waste = (cdwaste)*0.001
     c, conn = connection()
     c.execute("select average from cef where country_name='%s'"%country_name_new)
     d = c.fetchall()[0][0]
@@ -210,6 +204,11 @@ def pledge():
         c, conn = connection()
         c.execute("select average from cef where country_name='%s'"%country_name_new)
         d = c.fetchall()[0][0]
+        household = (cdelectricity + cdlpg + cdcng + cdpng)*0.001
+        transport = (cdsmallcar + cdmediumcar + cdlargecar + cdbike + cdtaxi + cdtrain + cdauto + cdbus + cddomflight + cdintflight)*0.001
+        waste = (cdwaste)*0.001
+        per = (res / d)*100
+        writtn = [round(household,2), round(transport,2), round(waste,2),round(per,2)]
         maildata = [round(res,2), d]
         emailid = "sirfrewati@gmail.com"
         msg = Message("Your Carbon Footprint Results !!",
@@ -218,7 +217,7 @@ def pledge():
         msg.html = render_template('mailtest.html', data=maildata)
         mail.send(msg)
         reslst=[d, cdelectricity *0.001, cdlpg*0.001, cdcng*0.001, cdpng*0.001, cdsmallcar*0.001, cdmediumcar*0.001, cdlargecar*0.001, cdbike*0.001, cdtaxi*0.001, cdtrain*0.001, cdauto*0.001, cdbus*0.001,cddomflight*0.001,cdintflight*0.001,cdwaste*0.001,maxfal, round(res,2),av]
-        return render_template('pledge.html',result=reslst)
+        return render_template('pledge.html',result=reslst, writtendata=writtn)
     return redirect(url_for('qhome1'))
 
 
