@@ -13,8 +13,8 @@ app.config.update(
 	MAIL_SERVER='smtp.gmail.com',
 	MAIL_PORT=465,
 	MAIL_USE_SSL=True,
-	MAIL_USERNAME = 'calculate.carbon@gmail.com',
-	MAIL_PASSWORD = 'carbon_footprint_calculator'
+	MAIL_USERNAME = 'rraman590@gmail.com',
+	MAIL_PASSWORD = '9162524780'
 	)
 mail = Mail(app)
 app.secret_key = 'some_secret'
