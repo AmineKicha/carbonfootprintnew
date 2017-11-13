@@ -14,7 +14,7 @@ app.config.update(
 	MAIL_PORT=465,
 	MAIL_USE_SSL=True,
 	MAIL_USERNAME = 'calculate.carbon@gmail.com',
-	MAIL_PASSWORD = 'carbon_footprint_calculator'
+	MAIL_PASSWORD = 'carboncalculator'
 	)
 mail = Mail(app)
 app.secret_key = 'some_secret'
