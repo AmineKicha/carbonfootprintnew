@@ -227,7 +227,7 @@
 	</section><br><br>
 	<div class="row">
         <div id='but-hid'class="col-sm-12 text-center">
-            <a id="submit-pledge" class="btn btn-primary btn-lg" type="button">Make Your Pledge!</a>
+            <a id="submit-pledge" class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#thankmodal">Make Your Pledge!</a>
         </div>
 		<script>
 		$('#submit-pledge').click(function(){
@@ -236,13 +236,33 @@
 			$("#pledge-items *").attr("disabled", "disabled").off('click');
 		});
 		</script>
-        <div id='pledge-thank'class="col-sm-8 col-sm-offset-2" hidden>
+       <!-- <div id='pledge-thank'class="col-sm-8 col-sm-offset-2" hidden>
             <div class="text-center" style='background:ghostwhite;'>
 				<br>
                 <h3>Thank you for your pledge!</h3><p style="text-align:center">Your actions will prevent the atmosphere</p><br>
 			</div>
         </div>
     </div>
+-->
+		  <!-- Modal -->
+  <div class="modal fade" id="thankmodal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a small modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+		
+		
 	<script>
     $(document).ready(function(){
         var gg1 = new JustGage({
