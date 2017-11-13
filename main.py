@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.config.update(
 	#EMAIL SETTINGS
 	MAIL_SERVER='smtp.gmail.com',
-	MAIL_PORT=587,
+	MAIL_PORT=465,
 	MAIL_USE_SSL=True,
 	MAIL_USERNAME = 'calculate.carbon@gmail.com',
 	MAIL_PASSWORD = 'carbon_footprint_calculator'
