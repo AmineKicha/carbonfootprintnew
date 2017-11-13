@@ -235,6 +235,10 @@
 			$('#pledge-thank').removeAttr('hidden');
 			$("#pledge-items *").attr("disabled", "disabled").off('click');
 		});
+		$('#thankmodal').modal({
+		    backdrop: 'static',
+		    keyboard: false
+		});
 		</script>
        <!-- <div id='pledge-thank'class="col-sm-8 col-sm-offset-2" hidden>
             <div class="text-center" style='background:ghostwhite;'>
